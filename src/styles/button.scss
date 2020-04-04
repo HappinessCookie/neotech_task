@@ -1,0 +1,32 @@
+$color--base: #fff;
+$color--danger: #d10000;
+$color--success: #119b00;
+
+@mixin backgroundHover($color) {
+	background-color: $color;
+
+	&:hover {
+		background-color: darken($color, 10%);
+	}
+}
+
+.button {
+	@include backgroundHover($color--base);
+	font-size: inherit;
+	border: 1px solid #bbbbbb;
+	padding: 5px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 150ms ease-in;
+	box-sizing: border-box;
+
+	&--danger {
+		@include backgroundHover($color--danger);
+		color: #fff;
+	}
+
+	&--success {
+		@include backgroundHover($color--success);
+		color: #fff;
+	}
+}

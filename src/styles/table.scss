@@ -1,0 +1,44 @@
+$border-color: #bbbbbb;
+
+.table {
+	width: 100%;
+	max-width: 1000px;
+	border-collapse: collapse;
+	border-spacing: 0;
+
+	th, td {
+		padding: 4px 10px;
+		border: 1px solid $border-color;
+	}
+
+	@media only screen and (max-width: 1000px) {
+		thead {
+			display: none;
+		}
+
+		tr {
+			display: block;
+			margin-bottom: 10px;
+			border: 1px solid $border-color;
+		}
+
+		td {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border: none;
+			padding: 5px 10px;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid $border-color;
+			}
+		}
+
+		td:before {
+			content: attr(data-name);
+			font-weight: bold;
+			white-space: nowrap;
+			padding-right: 5px;
+		}
+	}
+}
